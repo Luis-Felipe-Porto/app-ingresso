@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.landing .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CE2533;
+
+}
+.landing .image #icon-left{
+    z-index: 2;
+    margin-bottom: 12vh;
+    
+}
+.landing .image #icon-right{
+    z-index: 1;
+    margin-top: 20vh;
+}
+.landing .body{
+    margin-top: 5Vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.landing .body .button-group{
+    margin-top: 10Vh;
+    display: flex;
+    flex-direction: column;
+}
+.landing .body .text-group h1{
+    color: #585666;
+    font-family: "Lexend",sans-serif;
+    font-weight: 600;
+    margin-top: 5vh;
+}
+.landing .body button{
+    width: 250px;
+    margin: auto;
+    text-decoration: none;
+    padding: 15px;
+    background-color: white;
+    border: none;
+    color: #4285F4;
+    cursor: pointer;
+}
+.landing .body .login{
+    border: 0.25px solid;
+    border-radius: 5px;
+    color: #f5505d;
+    cursor: pointer;
+}

@@ -1,0 +1,69 @@
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section .toolbar-page{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+section .toolbar-page img{
+    margin-bottom: 15px;
+}
+section .form-page form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    min-width: 300px;
+}
+section .form-page form .button-group{
+    display: flex;
+   
+}
+section .form-page form input{
+    padding: 10px;
+    border: none;
+    
+}
+section .form-page form button{
+    padding: 10px;
+    width: 30vw;
+}
+section .form-page form .input-group{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 0.5px solid;
+    color: rgba(128, 128, 128, 0.342);
+}
+section .form-page form .input-group mat-icon{
+   color: #CE2533;
+}
+section .form-page form .input-group input{
+  width: 100%;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border-left: 0.5px solid;
+  color: rgba(128, 128, 128, 0.342);
+}
+section .form-page form .button-group button{
+    border: 0.5px solid;
+    border-top: none;
+    border-color: rgba(128, 128, 128, 0.363);
+    background-color: white;
+    height: 52px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+}
+section .form-page form .button-group .confirmar{
+    color: #CE2533;
+    
+}
+section .form-page form .button-group .cancelar{
+    color: rgba(128, 128, 128, 0.897);;
+}
+

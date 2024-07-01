@@ -1,0 +1,29 @@
+.card-ticket{
+    margin: auto;
+    padding: 15px 0px 15px 0px;
+    display: flex;
+    flex: 1;
+    max-width: 1000px;
+    justify-content: space-between;
+    
+}
+.card-ticket .content {
+    flex-direction: row;
+
+}
+.card-ticket .content .sub-title{
+    font-weight: 200;
+
+}
+.card-ticket .price-ticket{
+    // margin: auto;
+    font-weight: 400;
+    font-size: larger;
+    display: flex;
+    align-content: end;
+    justify-content: end;
+    
+}
+.card-ticket .title h2{
+    margin: 0;
+}

@@ -1,0 +1,73 @@
+section .body-content{
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    flex-direction: column;
+    margin: auto;
+    color: #585666;
+}
+section .body-content h2{
+    text-align: center;
+    border-bottom: solid #5856662f 0.5px;
+    font-weight: 500;
+    margin-top: 10px;
+    width: 40vw;
+    min-width: 300px;
+    padding: 20px;
+}
+section .form-page form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    min-width: 300px;
+}
+section .form-page form .button-group{
+    display: flex;
+   
+}
+section .form-page form input{
+    padding: 10px;
+    border: none;
+    
+}
+section .form-page form button{
+    padding: 10px;
+    width: 30vw;
+}
+section .form-page form .input-group{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 0.5px solid;
+    color: rgba(128, 128, 128, 0.342);
+}
+section .form-page form .input-group mat-icon{
+   color: #CE2533;
+}
+section .form-page form .input-group input{
+  width: 100%;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border-left: 0.5px solid;
+  color: rgba(128, 128, 128, 0.342);
+  font-weight: 300;
+  font-size: medium;
+}
+section .form-page form .button-group button{
+    border: 0.5px solid;
+    border-color: #ce2533;
+    background-color: white;
+    height: 52px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+section .form-page form .button-group .confirmar{
+    color: #CE2533;
+    
+}
+section .form-page form .button-group .cancelar{
+    color: rgba(128, 128, 128, 0.897);;
+}

@@ -1,0 +1,29 @@
+.toolbar{
+    background-color: #CE2533;
+    height: 15vh;
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.toolbar-text{
+    width: 70%;
+    font-weight: 300;
+}
+.toolbar-text p{
+    margin-bottom: 45px;
+}
+.toolbar-text h1{
+    margin-bottom: 0;
+}
+.toolbar-image-profile{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 30%;
+    margin-bottom: 40px;
+}
+p,h1{
+    color: white;
+}
