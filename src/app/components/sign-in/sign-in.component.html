@@ -6,31 +6,35 @@
 
     </div>
     <div class="form-page">
-        <form action="" method="post">
+        <form action="" method="post" (ngSubmit)="submitForm()">
            
             <div class="input-group">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
-                <input type="text" name="name" placeholder="Seu Nome">
+                <mat-icon aria-hidden="false" aria-label="Field nome" fontIcon="person" ></mat-icon>
+                <input type="text" name="name" placeholder="Seu Nome" [(ngModel)]="formData.name" required>
             </div>
             <div class="input-group">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="badge"></mat-icon>
-                <input type="text" name="name" placeholder="CPF">
+                <mat-icon aria-hidden="false" aria-label="Field cpf document" fontIcon="badge"></mat-icon>
+                <input type="text" name="cpf" placeholder="CPF" [(ngModel)]="formData.cpf">
             </div>
             <div class="input-group">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="mail"></mat-icon>
-                <input type="text" name="name" placeholder="E-mail">
+                <mat-icon aria-hidden="false" aria-label="Field contact" fontIcon="call"></mat-icon>
+                <input type="text" name="contact" placeholder="Telefone" [(ngModel)]="formData.contact">
             </div>
             <div class="input-group">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="key"></mat-icon>
-                <input type="password" name="name" placeholder="Senha">
+                <mat-icon aria-hidden="false" aria-label="Field cpf email" fontIcon="mail"></mat-icon>
+                <input type="text" name="email" placeholder="E-mail" [(ngModel)]="formData.email">
             </div>
             <div class="input-group">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="password"></mat-icon>
-                <input type="password" name="name" placeholder="Confirmar senha">
+                <mat-icon aria-hidden="false" aria-label="Field password" fontIcon="key"></mat-icon>
+                <input type="password" name="password" placeholder="Senha" [(ngModel)]="formData.password">
+            </div>
+            <div class="input-group">
+                <mat-icon aria-hidden="false" aria-label="Field confirm password" fontIcon="password"></mat-icon>
+                <input type="password" name="checkPassword" placeholder="Confirmar senha">
             </div>
             <div class="button-group">
-                <button class="cancelar">Cancelar</button>
-                <button class="confirmar">Confirmar</button>
+                <button class="cancelar" type="clear">Cancelar</button>
+                <button class="confirmar" type="submit">Confirmar</button>
             </div>
         </form>
 

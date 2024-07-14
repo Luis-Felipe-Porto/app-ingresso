@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'landing-page',
@@ -10,4 +11,9 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class LandingPageComponent {
 
+  constructor(private router: Router){
+  }
+  goToPage(pageName:string){
+    this.router.navigate([`${pageName}`]);
+  }
 }
