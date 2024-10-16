@@ -3,6 +3,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sign-in',
@@ -14,18 +15,18 @@ import { HttpClient } from '@angular/common/http';
 export class SignInComponent {
   formData: any = {};
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router: Router) {}
 
   submitForm() {
     this.http.post<any>('http://localhost:8080/v1/signUp', this.formData)
       .subscribe(
         response => {
-          console.log('Sucesso!', response);
-          // Aqui você pode lidar com o sucesso, por exemplo, redirecionar o usuário ou exibir uma mensagem de sucesso.
+          this.router.navigate(['/sign-in']);
+         
         },
         error => {
-          console.error('Erro ao enviar formulário:', error);
-          // Aqui você pode lidar com o erro, por exemplo, exibir uma mensagem de erro ao usuário.
+          console.log('Sucesso!', error);
+        
         }
       );
   }
