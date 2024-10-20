@@ -6,35 +6,41 @@ import { SaleTicketComponent } from './components/sale-ticket/sale-ticket.compon
 import { SendNegotiationComponent } from './components/send-negotiation/send-negotiation.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthGuard } from './service/AuthGuard';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
+    {path: "",redirectTo: "home", pathMatch: "full"},
     {
-        path: "tickets",
-        component: HomeComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: "",
+        path: "home",
         component: LandingPageComponent
     },
+
+    {path:'',canActivate:[AuthGuard], children:[
+        {
+            path: "sale",
+            component: SaleTicketComponent
+        },
+        {
+            path: "negotiation",
+            component: SendNegotiationComponent
+        },
+        {
+            path: "tickets",
+            component: HomeComponent
+        }
+    ]},
+    {path:'', children:[
+        {
+                path: "sign-in",
+                component: SignInComponent
+        },
+        {
+                path: "sign-up",
+                component: SignUpComponent
+        }
+    ]},
     {
-        path: "sign-in",
-        component: SignInComponent
-    },
-    {
-        path: "sign-up",
-        component: SignUpComponent
-    },
-    {
-        path: "sale",
-        component: SaleTicketComponent
-    },
-    {
-        path: "negotiation",
-        component: SendNegotiationComponent
+        path:"**", component: PageNotFoundComponent
     }
-
-
-
 
 ];

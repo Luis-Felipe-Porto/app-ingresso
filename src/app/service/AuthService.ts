@@ -20,8 +20,11 @@ export class AuthService {
 
   // Verifica se o usuário está autenticado (se o token existe e é válido)
   isAuthenticated(): boolean {
-    const token = this.getToken();
-    return !!token;  // Retorna true se o token existe
+    if (typeof window !== 'undefined' && localStorage) {
+      const token = this.getToken();
+      return !!token;
+    }
+    return false;  // Retorna true se o token existe
   }
 
   // Remove o token (logout)

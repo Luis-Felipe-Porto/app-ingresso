@@ -50,13 +50,13 @@ section .form-page form .input-group input{
 }
 section .form-page form .button-group button{
     border: 0.5px solid;
-    border-color: #CE2533;
+    border-top: none;
+    border-color: rgba(128, 128, 128, 0.363);
     background-color: white;
     height: 52px;
     width: 100%;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 40px;
 }
 section .form-page form .button-group .confirmar{
     color: #CE2533;

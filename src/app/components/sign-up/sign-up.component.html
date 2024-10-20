@@ -1,7 +1,7 @@
 <section>
     <div class="toolbar-page">
-        <img ngSrc="assets/icons/login.png" width="48" height="48">
-        <h1>Login</h1>
+        <img ngSrc="assets/icons/logo-sign-in.png" width="48" height="48">
+        <h1>Crie sua conta</h1>
         
 
     </div>
@@ -9,16 +9,32 @@
         <form action="" method="post" (ngSubmit)="submitForm()">
            
             <div class="input-group">
-                <mat-icon aria-hidden="false" aria-label="user do login" fontIcon="person"></mat-icon>
-                <input type="text" name="login" placeholder="Seu Nome" [(ngModel)]="formData.login" required>
+                <mat-icon aria-hidden="false" aria-label="Field nome" fontIcon="person" ></mat-icon>
+                <input type="text" name="name" placeholder="Seu Nome" [(ngModel)]="formData.name" required>
             </div>
-
             <div class="input-group">
-                <mat-icon aria-hidden="false" aria-label="senha do user" fontIcon="password"></mat-icon>
-                <input type="password" name="password" placeholder="Senha"  [(ngModel)]="formData.password" required>
+                <mat-icon aria-hidden="false" aria-label="Field cpf document" fontIcon="badge"></mat-icon>
+                <input type="text" name="cpf" placeholder="CPF" [(ngModel)]="formData.cpf">
+            </div>
+            <div class="input-group">
+                <mat-icon aria-hidden="false" aria-label="Field contact" fontIcon="call"></mat-icon>
+                <input type="text" name="contact" placeholder="Telefone" [(ngModel)]="formData.contact">
+            </div>
+            <div class="input-group">
+                <mat-icon aria-hidden="false" aria-label="Field cpf email" fontIcon="mail"></mat-icon>
+                <input type="text" name="email" placeholder="E-mail" [(ngModel)]="formData.email">
+            </div>
+            <div class="input-group">
+                <mat-icon aria-hidden="false" aria-label="Field password" fontIcon="key"></mat-icon>
+                <input type="password" name="password" placeholder="Senha" [(ngModel)]="formData.password">
+            </div>
+            <div class="input-group">
+                <mat-icon aria-hidden="false" aria-label="Field confirm password" fontIcon="password"></mat-icon>
+                <input type="password" name="checkPassword" placeholder="Confirmar senha">
             </div>
             <div class="button-group">
-                <button class="confirmar" type="submit">Login</button>
+                <button class="cancelar" type="clear">Cancelar</button>
+                <button class="confirmar" type="submit">Confirmar</button>
             </div>
         </form>
 

@@ -3,10 +3,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http'; 
-import { LoginResponse } from '../../types/login-response.type';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/AuthService';
-import { tap } from 'rxjs';
+import { SignupService } from '../../service/SignupService';
+
 
 @Component({
   selector: 'sign-up',
@@ -18,18 +18,32 @@ import { tap } from 'rxjs';
 export class SignUpComponent {
   formData: any = {};
 
-  constructor(private http: HttpClient,private router: Router,private auth:AuthService) {}
+  constructor(private http: HttpClient,private router: Router,private auth:AuthService,private loginService:SignupService) {}
 
   submitForm() {
-    this.http.post<LoginResponse>('http://localhost:8080/v1/signIn', this.formData).subscribe(
+    this.http.post<any>('http://localhost:8080/v1/signUp', this.formData)
+    .subscribe(
       response => {
-        this.auth.setToken(response.token)
-        this.router.navigate(['/tickets']);
+        this.router.navigate(['/sign-in']);
+       
       },
       error => {
-        console.error('Erro ao enviar formulário:', error);
+        console.log('Sucesso!', error);
+      
       }
-    )
+    );
+    
+    this.loginService.userRegister(this.formData).subscribe(data=>{
+      if(data != null){
+        this.auth.setToken(data.token)
+        this.router.navigateByUrl('/login');
+      }else{
+        alert("User or Password Invailid")
+      }
+    },error=>{
+      console.log("My Error", error)
+      alert("Error ao consultar dados")
+    })
   }
 
 }
