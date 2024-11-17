@@ -65,5 +65,12 @@ section .form-page form .button-group .confirmar{
 section .form-page form .button-group .cancelar{
     color: rgba(128, 128, 128, 0.897);;
 }
+section .form-page form .button-group .confirmar:disabled {
+    background-color: #cccccc; /* Cinza claro para o botão desativado */
+    color: #666666; /* Texto cinza escuro */
+    cursor: not-allowed; /* Cursor para indicar estado desativado */
+    border: 1px solid #aaaaaa; /* Opcional: borda cinza */
+    opacity: 0.6; /*  /* Torna o botão um pouco transparente */
+}
 
 

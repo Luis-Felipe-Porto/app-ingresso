@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams,HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
+import { AuthService } from './AuthService';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,14 @@ export class ApiService {
       "Accept":"*/*"
     })
   }
-  constructor( private http:HttpClient) { }
+  constructor( private http:HttpClient,private auth:AuthService) { }
 
   get(path:string, params:HttpParams =new HttpParams()):Observable<any>{
-    return this.http.get(path,{params}).pipe(catchError(this.formatErrors))
+    const token = this.auth.getToken()
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+    return this.http.get(path,{params,headers}).pipe(catchError(this.formatErrors))
   }
   put(path:string, body:Object ={}):Observable<any>{
     return this.http.put(path,JSON.stringify(body), this.httpOptions).pipe(catchError(this.formatErrors))

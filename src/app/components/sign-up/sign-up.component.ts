@@ -6,21 +6,24 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/AuthService';
 import { SignupService } from '../../service/SignupService';
+import { ToastrService } from 'ngx-toastr';
+import { BackPageComponent } from "../back-page/back-page.component";
 
 
 @Component({
   selector: 'sign-up',
   standalone: true,
-  imports: [MatIconModule,NgOptimizedImage,FormsModule],
+  imports: [MatIconModule, NgOptimizedImage, FormsModule, BackPageComponent],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss'
 })
 export class SignUpComponent {
   formData: any = {};
 
-  constructor(private http: HttpClient,private router: Router,private auth:AuthService,private loginService:SignupService) {}
+  constructor(private http: HttpClient,private router: Router,private auth:AuthService,private loginService:SignupService,private toastr: ToastrService) {}
 
   submitForm() {
+    /*
     this.http.post<any>('http://localhost:8080/v1/signUp', this.formData)
     .subscribe(
       response => {
@@ -32,18 +35,28 @@ export class SignUpComponent {
       
       }
     );
-    
+    */
+   
     this.loginService.userRegister(this.formData).subscribe(data=>{
       if(data != null){
         this.auth.setToken(data.token)
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('/sign-in');
+        this.toastr.success('Realize o login para começar as vendas!', 'Conta Criada',{
+          timeOut: 10000,
+          closeButton: true, 
+        });
       }else{
-        alert("User or Password Invailid")
+        this.toastr.warning('Campos inválidos na criação de Conta', 'Erro de Cadastro');
       }
     },error=>{
-      console.log("My Error", error)
-      alert("Error ao consultar dados")
+      if (error.status === 400) {
+        this.toastr.warning('Campos inválidos na criação de Conta', 'Erro de Cadastro');
+      } else {
+        console.log(error);
+        this.toastr.error('Não foi possível criar conta. Tente novamente mais tarde.', 'Erro Inesperado');
+      }
     })
   }
+
 
 }

@@ -8,14 +8,13 @@ import { AuthService } from '../../service/AuthService';
 import { SignupService } from '../../service/SignupService';
 import { CommonModule } from '@angular/common';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
-
-
+import { BackPageComponent } from "../back-page/back-page.component";
 
 
 @Component({
   selector: 'sign-in',
   standalone: true,
-  imports: [MatIconModule,NgOptimizedImage,FormsModule, CommonModule],
+  imports: [MatIconModule, NgOptimizedImage, FormsModule, CommonModule, BackPageComponent],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss'
 })
@@ -38,26 +37,25 @@ export class SignInComponent {
       this.toastr.warning('Senha deve ter mais de 6 caracteres', 'Erro de Senha');
       return;
     }
-      this.loginService.userRegister(this.formData).subscribe(data=>{
-        if(data != null){
-          this.auth.setToken(data.token)
-          this.router.navigateByUrl('/login');
-          this.toastr.success('Login realizado com sucesso!', 'Sucesso');
-        }else{
-          this.toastr.warning('Usuário ou senha inválidos', 'Erro de Login');
-        }
-      },error=>{
-        if (error.status === 403) {
-          this.toastr.warning('Usuário ou senha inválidos', 'Erro de Login');
-        } else {
-          console.log(error);
-          this.toastr.error('Não foi possível realizar o login. Tente novamente mais tarde.', 'Erro ao Buscar Dados');
-        }
-      })
+    this.loginService.authLogin(this.formData).subscribe(data=>{
+      if(data != null){
+        this.auth.setToken(data.token)
+        this.router.navigateByUrl('/tickets');
+      }else{
+        this.toastr.warning('Usuário ou senha inválidos', 'Erro de Login');
+      }
+    },error=>{
+      if (error.status === 403) {
+        this.toastr.warning('Usuário ou senha inválidos', 'Erro de Login');
+      }else{
+        console.log(error);
+        this.toastr.error('Não foi possível criar conta. Tente novamente mais tarde.', 'Erro Inesperado');
+      }
+    })
   }
   isValidForm(): boolean {
     const isLoginValid = this.formData.login && this.formData.login.length > 3;
     const isPasswordValid = this.formData.password && this.formData.password.length > 6;
     return isLoginValid && isPasswordValid;
-  }  
+  }
 }

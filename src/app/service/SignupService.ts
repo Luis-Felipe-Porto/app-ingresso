@@ -13,12 +13,12 @@ export class SignupService {
   public reg_url = " http://localhost:8080";
 
   constructor(private http:HttpClient, private apiService:ApiService) { }
-  authLogin(user_name:any, password:any):Observable<any>{
-    return this.apiService.get(this.login_url+'/user?email='+user_name+'&password='+password);
+  authLogin(user_login:any):Observable<any>{
+    return this.apiService.post(this.login_url+'/v1/signIn',user_login);
   }
 
   userRegister(user_dto:any):Observable<any>{
-    return this.apiService.post(this.reg_url+'/v1/signIn',user_dto);
+    return this.apiService.post(this.reg_url+'/v1/signUp',user_dto);
   }
 
   adminLogin(user_name:any, password:any):Observable<any>{

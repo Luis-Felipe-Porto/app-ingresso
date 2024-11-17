@@ -1,5 +1,6 @@
 <section>
     <div class="toolbar-page">
+        <back-page></back-page>
         <img ngSrc="assets/icons/login.png" width="48" height="48">
         <h1>Login</h1>
         
@@ -10,13 +11,13 @@
            
             <div class="input-group">
                 <mat-icon aria-hidden="false" aria-label="user do login" fontIcon="person"></mat-icon>
-                <input type="text" name="login" placeholder="Seu Login" [(ngModel)]="formData.login" minlength="3" required>
+                <input type="text" name="login" placeholder="Seu email" [(ngModel)]="formData.login" required>
                <!--  <div *ngIf="formData.login?.length < 3 && formData.login" class="error">Login deve ter mais de 3 caracteres</div> -->
             </div>
 
             <div class="input-group">
                 <mat-icon aria-hidden="false" aria-label="senha do user" fontIcon="password"></mat-icon>
-                <input type="password" name="password" placeholder="Senha"  [(ngModel)]="formData.password" minlength="6" required>
+                <input type="password" name="password" placeholder="Senha (mínimo 6 dígitos)"  [(ngModel)]="formData.password" required>
                 <!-- <div *ngIf="formData.password?.length < 6 && formData.password" class="error">Senha deve ter mais de 6 caracteres</div> -->
             </div>
             <div class="button-group">

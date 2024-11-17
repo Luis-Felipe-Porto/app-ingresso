@@ -1,0 +1,35 @@
+.float-button {
+    position: fixed;
+    bottom: 20px; /* Distância da parte inferior */
+    right: 20px; /* Distância da lateral direita */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f5505d; /* Cor de fundo do botão */
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+      background-color: #f5505d; /* Cor de fundo ao passar o mouse */
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+  
+    &:active {
+      background-color: #f5505d; /* Cor ao clicar */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  .plus-icon {
+    font-size: 36px; /* Tamanho do símbolo de "+" */
+    font-weight: bold;
+    line-height: 1;
+  }
+  
