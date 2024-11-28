@@ -5,6 +5,17 @@ import { CommonModule } from '@angular/common';
 import { FloatButtonComponent } from '../float-button/float-button.component';
 import { Router } from '@angular/router';
 
+
+interface Ticket {
+  id: number;
+  ticket:{
+    title: string;
+    price: number;
+    subtitle: 'data'
+    description: string;
+  }
+}
+
 @Component({
   selector: 'content',
   standalone: true,
@@ -14,13 +25,16 @@ import { Router } from '@angular/router';
 })
 export class ContentComponent {
 
-  items: any[] = []; // Array para armazenar os dados da API
+  items: Ticket[] = []; // Array para armazenar os dados da API
   loading = true; // Flag para controlar o estado de carregamento
   error: string | null = null;
+  showButtonMyTickets = false;
+  showButtonAvailable = true;
   constructor(private service:TicketService,private router: Router){}
 
   ngOnInit() {
     this.fetchData();
+    
   }
 
   fetchData(){

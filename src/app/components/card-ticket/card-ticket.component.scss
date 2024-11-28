@@ -1,10 +1,14 @@
 .card-ticket{
     margin: auto;
-    padding: 15px 0px 15px 0px;
+    padding: 15px 8px 15px 8px;
     display: flex;
     flex: 1;
     max-width: 1000px;
+    min-width: 300px;
+    word-wrap: break-word;
     justify-content: space-between;
+    align-content: center;
+    border: 0.5px solid rgba(0, 0, 0, 0.062);
     
 }
 .card-ticket .content {
@@ -16,14 +20,42 @@
 
 }
 .card-ticket .price-ticket{
-    // margin: auto;
-    font-weight: 400;
+    text-align: center;
+    font-weight: 300;
     font-size: larger;
     display: flex;
-    align-content: end;
     justify-content: end;
+    align-self: center;
+    font-size: 20px;
     
 }
 .card-ticket .title h2{
     margin: 0;
+}
+.card-ticket .action-group{
+    display: flex;
+    justify-content: space-between;
+}
+.card-ticket  .action-ticket{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-ticket  .action-ticket .button-text{
+    border: 0.5px solid;
+    border-color: #41b82a;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 10%;
+    margin-right: 10px;
+}
+.card-ticket  .action-ticket .button-icon{
+    border: 0.5px solid;
+    border-color: #db9121;
+    background-color: white;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 10%;
 }

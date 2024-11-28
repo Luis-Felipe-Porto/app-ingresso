@@ -23,20 +23,6 @@ export class SignUpComponent {
   constructor(private http: HttpClient,private router: Router,private auth:AuthService,private loginService:SignupService,private toastr: ToastrService) {}
 
   submitForm() {
-    /*
-    this.http.post<any>('http://localhost:8080/v1/signUp', this.formData)
-    .subscribe(
-      response => {
-        this.router.navigate(['/sign-in']);
-       
-      },
-      error => {
-        console.log('Sucesso!', error);
-      
-      }
-    );
-    */
-   
     this.loginService.userRegister(this.formData).subscribe(data=>{
       if(data != null){
         this.auth.setToken(data.token)

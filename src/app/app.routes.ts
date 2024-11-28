@@ -7,6 +7,7 @@ import { SendNegotiationComponent } from './components/send-negotiation/send-neg
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthGuard } from './service/AuthGuard';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MyTicketsComponent } from './pages/my-tickets/my-tickets.component';
 
 export const routes: Routes = [
     {path: "",redirectTo: "home", pathMatch: "full"},
@@ -23,6 +24,10 @@ export const routes: Routes = [
         {
             path: "negotiation",
             component: SendNegotiationComponent
+        },
+        {
+            path: "my-tickets",
+            component: MyTicketsComponent
         },
         {
             path: "tickets",

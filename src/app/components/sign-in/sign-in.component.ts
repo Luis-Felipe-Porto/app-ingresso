@@ -40,6 +40,8 @@ export class SignInComponent {
     this.loginService.authLogin(this.formData).subscribe(data=>{
       if(data != null){
         this.auth.setToken(data.token)
+        this.auth.setIdIndentify(data.id)
+        this.auth.setPid(data.pid)
         this.router.navigateByUrl('/tickets');
       }else{
         this.toastr.warning('Usuário ou senha inválidos', 'Erro de Login');

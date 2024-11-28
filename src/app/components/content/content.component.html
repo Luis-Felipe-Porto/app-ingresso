@@ -5,8 +5,8 @@
     <div *ngIf="loading" class="loading text-title">Carregando...</div>
     <div *ngIf="error" class="error">{{ error }}</div>
 
-    <div *ngIf="!loading && !error && items.length > 0" class="content-list text-title">
-    <card-ticket *ngFor="let item of items" [data]="item"></card-ticket>
+    <div *ngIf="!loading && !error && items.length > 0" >
+    <card-ticket *ngFor="let item of items" [data]="item" [showButtonAvailable]="true"></card-ticket>
     </div>
     <div *ngIf="!loading && !error && items.length === 0" class="empty text-title">Nenhum item encontrado.</div>
     <float-button (clickEvent)="addTicket()"></float-button>

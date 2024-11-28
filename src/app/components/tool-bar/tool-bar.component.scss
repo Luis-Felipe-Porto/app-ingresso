@@ -1,3 +1,6 @@
+section{
+    background-color: #CE2533;
+}
 .toolbar{
     background-color: #CE2533;
     height: 15vh;
@@ -5,10 +8,13 @@
     padding: 24px;
     align-items: center;
     justify-content: flex-start;
+    margin: auto;
+    max-width: 1000px;
 }
 .toolbar-text{
-    width: 70%;
+    max-width: 500px;
     font-weight: 300;
+    margin: auto;
 }
 .toolbar-text p{
     margin-bottom: 45px;
@@ -23,6 +29,9 @@
     justify-content: end;
     width: 30%;
     margin-bottom: 40px;
+    margin: auto;
+    max-width: 100px;
+    
 }
 p,h1{
     color: white;

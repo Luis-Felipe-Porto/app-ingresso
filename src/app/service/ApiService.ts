@@ -28,6 +28,29 @@ export class ApiService {
   post(path:string, body:Object ={}):Observable<any>{
     return this.http.post(path,JSON.stringify(body),this.httpOptions).pipe(catchError(this.formatErrors))
   }
+  publish(path:string):Observable<any>{
+    const token = this.auth.getToken()
+    const httpOptions ={
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        "Accept":"*/*",
+        Authorization: `Bearer ${token}`
+      })
+    }
+    console.log(httpOptions)
+    return this.http.post(path,null,httpOptions).pipe(catchError(this.formatErrors))
+  }
+  postTicket(path:string, body:Object ={}):Observable<any>{
+    const token = this.auth.getToken()
+    const httpOptions ={
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        "Accept":"*/*",
+        Authorization: `Bearer ${token}`
+      })
+    }
+    return this.http.post(path,JSON.stringify(body),httpOptions).pipe(catchError(this.formatErrors))
+  }
   delete(path:string):Observable<any>{
     return this.http.delete(path).pipe(catchError(this.formatErrors))
   }

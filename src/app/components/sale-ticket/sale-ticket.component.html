@@ -6,23 +6,23 @@
 
     </div>
     <div class="form-page">
-        <form action="" method="post">
+        <form action="" method="post" (ngSubmit)="createTicket()">
            
             <div class="input-group">
                 <mat-icon aria-hidden="false" aria-label="Titulo do Ingresso" fontIcon="toc"></mat-icon>
-                <input type="text" name="title" placeholder="Titulo">
+                <input type="text" name="title" placeholder="Titulo" [(ngModel)]="formData.title" required>
             </div>
             <div class="input-group">
                 <mat-icon aria-hidden="false" aria-label="Valor do Ingresso" fontIcon="paid"></mat-icon>
-                <input type="text" name="value" placeholder="Valor">
+                <input type="text" name="price" placeholder="Valor" [(ngModel)]="formData.price" required>
             </div>
             <div class="input-group">
                 <mat-icon aria-hidden="false" aria-label="Descrição do Ingresso" fontIcon="description"></mat-icon>
-                <input type="text" name="description" placeholder="Descrição">
+                <input type="text" name="description" placeholder="Descrição" [(ngModel)]="formData.description" required>
             </div>
             <div class="button-group">
-                <button class="cancelar">Cancelar</button>
-                <button class="confirmar">Criar</button>
+                <button class="cancelar" type="clear">Cancelar</button>
+                <button class="confirmar" type="submit">Criar</button>
             </div>
         </form>
 
