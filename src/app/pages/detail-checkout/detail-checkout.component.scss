@@ -1,0 +1,59 @@
+section .card-details{
+    width: 500px;
+    margin: auto;
+}
+section .card-details ::ng-deep card-ticket .price-ticket{
+min-width: 50%;
+}
+
+section .button-group button{
+    border: 0.5px solid;
+    border-color: #CE2533;
+    background-color: white;
+    height: 52px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 400;
+    margin-top: 40px;
+}
+section .button-group{
+    display: flex;
+   justify-content: center;
+}
+section .details-ticket{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+section .details-ticket .text-info{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    width: 500px;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-between
+}
+section .details-ticket .final{
+    border-top: dashed 0.5px #00000028;
+    padding-top: 15px;
+    font-weight: 600;
+    color: #0e940e;
+}
+section .button-group .confirmar{
+    max-width: 500px;
+}
+section hr{
+    margin: auto;
+    max-width: 1000px;
+}
+section .text-title{
+    padding: 20px 40px 20px 0px;
+    font-size: 20px;
+    font-weight: 300;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+

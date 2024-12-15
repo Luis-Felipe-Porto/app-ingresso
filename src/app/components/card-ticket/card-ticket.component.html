@@ -10,7 +10,7 @@
     
     <div class="price-ticket">R$ {{ data?.ticket?.price | number: '1.2-2' }}</div>
     <div class="action-group">
-        <div *ngIf="showButtonAvailable" class="action-ticket"><button class="button-text" (click)="comprar()">Comprar</button></div>
+        <div *ngIf="showButtonAvailable" class="action-ticket"><button class="button-text" (click)="comprar(data?.id)">Comprar</button></div>
         <div *ngIf="showButtonMyTickets" class="action-ticket"><button class="button-text"  (click)="publicar(data?.id)">Publicar</button></div>
         <div *ngIf="showButtonMyTickets" class="action-ticket"><button class="button-icon"  (click)="editar()" color="primary" aria-label="Editar">
                 <mat-icon fontIcon="edit"></mat-icon></button>

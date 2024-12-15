@@ -4,13 +4,14 @@ import { CommonModule } from '@angular/common';
 import { TicketService } from '../../service/TicketService';
 import { Router } from '@angular/router';
 import { CardTicketComponent } from '../../components/card-ticket/card-ticket.component';
+import { FloatButtonComponent } from '../../components/float-button/float-button.component';
 
 interface Ticket {
   id: number;
   ticket:{
     title: string;
     price: number;
-    subtitle: 'data'
+    subtitle: string
     description: string;
   }
 }
@@ -18,7 +19,7 @@ interface Ticket {
 @Component({
   selector: 'my-tickets',
   standalone: true,
-  imports: [CommonModule,ToolBarComponent,CardTicketComponent],
+  imports: [CommonModule,ToolBarComponent,CardTicketComponent,FloatButtonComponent],
   templateUrl: './my-tickets.component.html',
   styleUrl: './my-tickets.component.scss'
 })
@@ -46,6 +47,9 @@ export class MyTicketsComponent {
       }
     });
  
+  }
+  addTicket() {
+    this.router.navigateByUrl('/sale');
   }
 
 }

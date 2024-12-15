@@ -1,0 +1,20 @@
+<section>
+    <tool-bar>[image]</tool-bar>
+    <div class="text-title">Finalize sua Compra</div>
+    <div class="card-details"><card-ticket [data]="ticketSale"></card-ticket></div>
+    <div class="details-ticket">
+        
+        <div class="text-info">
+            <p>Taxa Transferencia</p><p>R$ {{ calculateTranfered() }}</p>
+        </div>
+        <div class="text-info final">
+            <p>Total</p><p>R$ {{ claculateTotal() }}</p>
+        </div>
+        <hr>
+        
+    </div>
+    <div class="button-group">
+        <button class="confirmar" type="submit" [disabled]="!isValidForm()">Realizar Pagamento</button>
+    </div>
+    
+</section>

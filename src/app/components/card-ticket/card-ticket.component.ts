@@ -49,8 +49,11 @@ export class CardTicketComponent {
       this.toastr.error('Não foi possível criar conta. Tente novamente mais tarde.', 'Erro Inesperado');
     })
   }
-  comprar(){
-
+  comprar(ticketId:number | undefined){
+    if(ticketId == undefined){
+      return;
+    }
+    this.router.navigateByUrl(`/payment/${ticketId}`);
   }
   editar(){
     this.router.navigateByUrl('/sale');

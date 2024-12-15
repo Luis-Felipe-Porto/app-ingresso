@@ -19,6 +19,9 @@ export class TicketService{
         const id = this.auth.getPid();
         return this.apiService.get(this.reg_url + '/v1/management/'+id+'/tickets');
     }
+    getTicketById(idTicket:string) :Observable<any>{
+        return this.apiService.get(this.reg_url + '/v1/ticket-sale/'+idTicket);
+    }
     createTicket(ticket_dto:any):Observable<any>{
         return this.apiService.postTicket(this.reg_url + '/v1/ticket-sale/'+this.auth.getPid()+'/create-announcement',ticket_dto);
     }
