@@ -5,10 +5,10 @@
     <div class="details-ticket">
         
         <div class="text-info">
-            <p>Taxa Transferencia</p><p>R$ {{ calculateTranfered() }}</p>
+            <p>Taxa Transferencia</p><p>R$ {{ calculateTranfered()?.toFixed(2) }}</p>
         </div>
         <div class="text-info final">
-            <p>Total</p><p>R$ {{ claculateTotal() }}</p>
+            <p>Total</p><p>R$ {{ claculateTotal()?.toFixed(2) }}</p>
         </div>
         <hr>
         

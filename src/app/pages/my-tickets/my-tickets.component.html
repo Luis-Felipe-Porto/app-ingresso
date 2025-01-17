@@ -1,6 +1,6 @@
 <section>
     <tool-bar></tool-bar>
-    <div class="title">
+    <div class="empty  title text-title">
         <h3>Meus Ingressos</h3>
     </div>
     
@@ -8,6 +8,7 @@
         <div *ngFor="let ticket of tickets" class="card-ticket">
             <card-ticket [data]="ticket" [showButtonMyTickets]="true"></card-ticket>
         </div>
+        <div *ngIf="!loading && !error && tickets.length === 0" class="empty text-title">Nenhum item encontrado.</div>
         <float-button (clickEvent)="addTicket()"></float-button>
     </content>
    
