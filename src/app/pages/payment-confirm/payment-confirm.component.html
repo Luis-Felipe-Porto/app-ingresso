@@ -1,0 +1,14 @@
+<section>
+    <tool-bar>[image]</tool-bar>
+    <div class="details-ticket">
+        <div class="text-title">Finalize sua Compra</div>
+        <div class="qrcode-container">
+            <img [src]="qrCodeDataUrl" alt="QR Code">
+        </div>
+        <p><strong>PIX Copia e Cola:</strong></p>
+        <textarea cols="60" rows="5">{{ copiaECola }}</textarea>
+    </div>
+    <div class="button-group">
+        <button class="confirmar" type="submit" (click)="pagar()">Copiar</button>
+    </div>
+</section>

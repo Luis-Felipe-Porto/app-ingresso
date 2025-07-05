@@ -3,6 +3,7 @@ import { CardTicketComponent } from "../../components/card-ticket/card-ticket.co
 import { ToolBarComponent } from '../../components/tool-bar/tool-bar.component';
 import { ActivatedRoute } from '@angular/router';
 import { TicketService } from '../../service/TicketService';
+import { Router } from '@angular/router';
 
 interface Ticket {
   id: number;
@@ -27,7 +28,7 @@ export class DetailCheckoutComponent {
   ticketDetails: any;
   error: string | null = null;
 
-  constructor(private route: ActivatedRoute,private service:TicketService) {}
+  constructor(private route: ActivatedRoute,private service:TicketService,private router: Router) {}
 
   isValidForm():boolean{
     return true;
@@ -71,6 +72,9 @@ export class DetailCheckoutComponent {
     }
     return null;
 
+  }
+  gerarChavePix(valor:number){
+    this.router.navigateByUrl('/payment-ticket');
   }
 
 }

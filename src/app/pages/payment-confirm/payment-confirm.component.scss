@@ -1,0 +1,23 @@
+section .details-ticket{
+    width: 500px;
+    margin: auto;
+    min-width: 50%;
+    text-align: center;
+}
+section .button-group button{
+    border: 0.5px solid;
+    border-color: #CE2533;
+    background-color: white;
+    height: 30px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 400;
+    margin-top: 30px;
+}
+section .button-group{
+    display: flex;
+   justify-content: center;
+}
+section .button-group .confirmar{
+    max-width: 500px;
+}

@@ -9,6 +9,7 @@ import { AuthGuard } from './service/AuthGuard';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MyTicketsComponent } from './pages/my-tickets/my-tickets.component';
 import { DetailCheckoutComponent } from './pages/detail-checkout/detail-checkout.component';
+import { PaymentConfirmComponent } from './pages/payment-confirm/payment-confirm.component';
 
 export const routes: Routes = [
     {path: "",redirectTo: "home", pathMatch: "full"},
@@ -37,6 +38,10 @@ export const routes: Routes = [
         {
             path: "payment/:id",
             component: DetailCheckoutComponent
+        },
+        {
+            path: "payment-ticket",
+            component: PaymentConfirmComponent
         }
     ]},
     {path:'', children:[
