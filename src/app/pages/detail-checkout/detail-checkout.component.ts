@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CardTicketComponent } from "../../components/card-ticket/card-ticket.component";
 import { ToolBarComponent } from '../../components/tool-bar/tool-bar.component';
 import { ActivatedRoute } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 import { TicketService } from '../../service/TicketService';
 import { Router } from '@angular/router';
 
@@ -12,13 +13,18 @@ interface Ticket {
     price: number;
     subtitle: string
     description: string;
-  }
+  };
+  people:{
+    contact:string
+  };
+  available: Boolean;
+  sold: Boolean;
 }
 
 @Component({
   selector: 'detail-checkout',
   standalone: true,
-  imports: [CardTicketComponent,ToolBarComponent],
+  imports: [CardTicketComponent,ToolBarComponent,MatIconModule],
   templateUrl: './detail-checkout.component.html',
   styleUrl: './detail-checkout.component.scss'
 })
@@ -75,6 +81,13 @@ export class DetailCheckoutComponent {
   }
   gerarChavePix(valor:number){
     this.router.navigateByUrl('/payment-ticket');
+  }
+  falarComVendedor() {
+    const numero = this.ticketSale?.people.contact; // coloque o DDI + DDD + número
+    const mensagem = encodeURIComponent(`Oi, Gostaria de comprar o ingresso ${this.ticketSale?.ticket.title}!`);
+    const url = `https://wa.me/${numero}?text=${mensagem}`;
+  
+    window.open(url, '_blank'); // abre em nova aba
   }
 
 }

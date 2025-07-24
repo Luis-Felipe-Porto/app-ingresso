@@ -1,7 +1,7 @@
 <section>
     <div class="toolbar-page">
         <img ngSrc="assets/icons/sale-ticket.png" width="48" height="48">
-        <h1>Venda seus Ingressos</h1>
+        <h1>Crie um Novo Anúncio</h1>
         
 
     </div>
@@ -21,7 +21,7 @@
                 <input type="text" name="description" placeholder="Descrição" [(ngModel)]="formData.description" required>
             </div>
             <div class="button-group">
-                <button class="cancelar" type="clear">Cancelar</button>
+                <button class="cancelar" type="button" (click)="cancelar()">Cancelar</button>
                 <button class="confirmar" type="submit">Criar</button>
             </div>
         </form>

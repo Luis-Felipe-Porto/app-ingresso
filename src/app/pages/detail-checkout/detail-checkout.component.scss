@@ -1,6 +1,15 @@
+
+section .content-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
 section .card-details{
-    width: 500px;
+   
     margin: auto;
+    max-width: 300px;
+
 }
 section .card-details ::ng-deep card-ticket .price-ticket{
 min-width: 50%;
@@ -8,49 +17,71 @@ min-width: 50%;
 
 section .button-group button{
     border: 0.5px solid;
-    border-color: #CE2533;
+    border-color: #0e940e;;
     background-color: white;
     height: 52px;
     width: 100%;
     cursor: pointer;
     font-weight: 400;
     margin-top: 40px;
+    padding: 10px;
+    border-radius: 10px;
 }
 section .button-group{
     display: flex;
    justify-content: center;
+   padding: 10px;
 }
 section .details-ticket{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 section .details-ticket .text-info{
     padding-top: 20px;
-    font-size: 20px;
-    font-weight: 300;
-    width: 500px;
+    font-size: 15px;
+   // font-weight: 100;
+   // width: 500px;
     display: flex;
     align-content: space-around;
-    justify-content: space-between
+    justify-content: space-between;
+    color: goldenrod;
+}
+section .details-ticket .text-info button{
+    color: #3d0e94;
+    border: none;
+   // border-color: #0e940e;;
+    background-color: white;
+    //height: 40px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 400;
+    //margin-top: 40px;
 }
 section .details-ticket .final{
     border-top: dashed 0.5px #00000028;
     padding-top: 15px;
-    font-weight: 600;
-    color: #0e940e;
+//    font-weight: 100;
+    color: #3d0e94;
 }
 section .button-group .confirmar{
     max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .button-group .redirec-contact{
+    color: #0e940e;
 }
 section hr{
     margin: auto;
     max-width: 1000px;
 }
 section .text-title{
-    padding: 20px 40px 20px 0px;
-    font-size: 20px;
+    padding: 20px;
+    font-size: 17px;
     font-weight: 300;
     max-width: 1000px;
     margin: auto;

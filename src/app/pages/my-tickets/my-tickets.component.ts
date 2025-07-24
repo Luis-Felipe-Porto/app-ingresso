@@ -13,7 +13,9 @@ interface Ticket {
     price: number;
     subtitle: string
     description: string;
-  }
+  };
+  available: Boolean;
+  sold: Boolean;
 }
 
 @Component({

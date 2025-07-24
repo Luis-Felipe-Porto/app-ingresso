@@ -28,5 +28,8 @@ export class TicketService{
     publishTicket(idTicket:number):Observable<any>{
         return this.apiService.publish(this.reg_url + '/v1/ticket-sale/'+idTicket+'/publish');
     }
+    disableTicket(idTicket:number):Observable<any>{
+        return this.apiService.disabled(this.reg_url + '/v1/ticket-sale/'+idTicket+'/disabled');
+    }
 
 }

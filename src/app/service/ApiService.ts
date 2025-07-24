@@ -52,6 +52,18 @@ export class ApiService {
     console.log(httpOptions)
     return this.http.post(path,null,httpOptions).pipe(catchError(this.formatErrors))
   }
+  disabled(path:string):Observable<any>{
+    const token = this.auth.getToken()
+    const httpOptions ={
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        "Accept":"*/*",
+        Authorization: `Bearer ${token}`
+      })
+    }
+    console.log(httpOptions)
+    return this.http.post(path,null,httpOptions).pipe(catchError(this.formatErrors))
+  }
   postTicket(path:string, body:Object ={}):Observable<any>{
     const token = this.auth.getToken()
     const httpOptions ={

@@ -13,6 +13,8 @@ interface Ticket {
     subtitle: string; // Corrigi o tipo
     description: string;
   };
+  available: Boolean;
+  sold: Boolean;
 }
 
 @Component({
@@ -57,5 +59,24 @@ export class CardTicketComponent {
   }
   editar(){
     this.router.navigateByUrl('/sale');
+  }
+  desativar(ticketId:number | undefined){
+    if(ticketId == undefined){
+      return;
+    }
+    this.service.disableTicket(ticketId).subscribe(data=>{
+      if(data != null){
+        this.router.navigateByUrl('/my-tickets');
+        this.toastr.warning('Boas vendas!', 'Ingresso Removido',{
+          timeOut: 10000,
+          closeButton: true, 
+        });
+      }else{
+        this.toastr.warning('Não foi possivel Publicar', 'Erro ao Publicar');
+      }
+    },error=>{
+      console.log(error);
+      this.toastr.error('Não foi possível criar conta. Tente novamente mais tarde.', 'Erro Inesperado');
+    })
   }
 }

@@ -30,9 +30,110 @@ section{
     width: 30%;
     margin-bottom: 40px;
     margin: auto;
-    max-width: 100px;
+    max-width: 20px;
     
 }
 p,h1{
     color: white;
 }
+.toolbar-container {
+    background-color: #CE2533;
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    .toolbar-text {
+      h1 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #b2dfdb;
+      }
+    }
+  
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+  
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+  
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;
+          cursor: pointer;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+  
+        &.active {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 10px;
+          background-color: #CE2533;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+        }
+      }
+  
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+  
+      .toolbar-image-profile {
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+  
+      .toolbar-right {
+        width: 100%;
+        justify-content: space-between;
+  
+        .nav-links {
+          display: none;
+          width: 100%;
+          margin-top: 0.5rem;
+  
+          a {
+            display: block;
+            padding: 0.25rem 0;
+          }
+        }
+  
+        .menu-toggle {
+          display: block;
+        }
+      }
+    }
+  }

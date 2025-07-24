@@ -5,6 +5,7 @@ import { TicketService } from '../../service/TicketService';
 import { ToastrService } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'sale-ticket',
@@ -16,9 +17,13 @@ import { Router } from '@angular/router';
 export class SaleTicketComponent {
   formData: any = {};
 
-  constructor(private ticketService: TicketService,private toastr: ToastrService,private router: Router){}
+  constructor(private ticketService: TicketService,private toastr: ToastrService,private router: Router,private location: Location){}
 
   createTicket(){
+    if (this.formData.title == null || this.formData.price ==null || this.formData.description == null) {
+      this.toastr.warning('Campos inválidos na criação de Ingresso', 'Erro de Cadastro');
+      return;
+    } 
     this.ticketService.createTicket(this.formData).subscribe(data=>{
       if(data != null){
         this.router.navigateByUrl('/my-tickets');
@@ -37,5 +42,8 @@ export class SaleTicketComponent {
         this.toastr.error('Não foi possível criar ingresso. Tente novamente mais tarde.', 'Erro Inesperado');
       }
     })
+  }
+  cancelar(){
+    this.location.back();
   }
 }

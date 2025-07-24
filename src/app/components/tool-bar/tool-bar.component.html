@@ -1,12 +1,22 @@
 <section>
     <div class="toolbar">
+
+        <div class="toolbar-right">
+            <nav class="nav-links" [class.active]="menuOpen">
+              <a routerLink="/tickets" (click)="closeMenu()">Home</a>
+              <a routerLink="/my-tickets" (click)="closeMenu()">Ingressos</a>
+              <a routerLink="/sale" (click)="closeMenu()">Anunciar</a>
+              <a routerLink="/" (click)="closeMenu()">Login</a>
+            </nav>
+        
+        <button class="menu-toggle" (click)="toggleMenu()">☰</button>
         <div class="toolbar-text">
-            <h1>Olá, Ana</h1>
+            <h1>Olá</h1>
             <p>Bem vindo(a) a RAVE</p>
         </div>
         <div class="toolbar-image-profile">
             <img ngSrc="assets/login/profile.png" width="50" height="50">
         </div>
-
+        </div>
     </div>
 </section>

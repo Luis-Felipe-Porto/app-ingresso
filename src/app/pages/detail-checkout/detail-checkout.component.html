@@ -1,20 +1,25 @@
 <section>
     <tool-bar>[image]</tool-bar>
-    <div class="text-title">Finalize sua Compra</div>
-    <div class="card-details"><card-ticket [data]="ticketSale"></card-ticket></div>
-    <div class="details-ticket">
+    <div class="content-page">
+        <div class="text-title">Entre em contato com o vendedor</div>
+        <div class="card-details"><card-ticket [data]="ticketSale"></card-ticket></div>
+        <div class="details-ticket">
         
         <div class="text-info">
-            <p>Taxa Transferencia</p><p>R$ {{ calculateTranfered()?.toFixed(2) }}</p>
+            <p>Cuidado ao repassar informações pessoais a vendedores !!</p><!--<p>R$ {{ calculateTranfered()?.toFixed(2) }}</p>-->
         </div>
         <div class="text-info final">
-            <p>Total</p><p>R$ {{ claculateTotal()?.toFixed(2) }}</p>
+            <!--<p>Ajude o projeto com doações</p>--><p><button class="donation" type="submit" [disabled]="!isValidForm()" (click)="gerarChavePix(50)">$[Doar] Ajude o projeto com qualquer valor</button></p>
+            <!--<p>R$ {{ claculateTotal()?.toFixed(2) }}</p>-->
         </div>
         <hr>
         
+        </div>
+        <div class="button-group">
+            <button class="confirmar" type="submit" [disabled]="!isValidForm()" (click)="falarComVendedor()"><i class="fab fa-whatsapp fa-2x" style="color: green;"><br></i>Chamar no Whatsapp</button>
+            <!-- <button class="confirmar" type="submit" [disabled]="!isValidForm()" (click)="gerarChavePix(50)">Realizar Pagamento</button>-->
+        </div>
     </div>
-    <div class="button-group">
-        <button class="confirmar" type="submit" [disabled]="!isValidForm()" (click)="gerarChavePix(50)">Realizar Pagamento</button>
-    </div>
+    
     
 </section>
